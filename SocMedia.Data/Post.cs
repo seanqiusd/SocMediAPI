@@ -8,5 +8,6 @@ namespace SocMedia.Data
 {
     public class Post
     {
+
     }
 }
