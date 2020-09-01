@@ -23,7 +23,6 @@ namespace SocMedia.Services
             var entity =
                 new Post()
                 {
-                    //SocMediaUser = _userId,
                     Id = model.Id,
                     Title = model.Title,
                     Text = model.Text,
@@ -31,6 +30,7 @@ namespace SocMedia.Services
 
             using (var ctx = new ApplicationDbContext())
             {
+                entity.Author = ctx.SocMediaUsers.Where(e => e.Id == _userId).First();
                 ctx.Posts.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
