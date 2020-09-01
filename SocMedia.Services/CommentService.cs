@@ -22,35 +22,37 @@ namespace SocMedia.Services
             var entity =
                 new Comment()
                 {
-                    Text = model.CommentText,
+                    PostId = model.PostId,
+                    Text = model.CommentText
 
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
+                entity.Author = ctx.SocMediaUsers.Where(e => e.Id == _userId).First();
                 ctx.Comments.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 2;
             }
         }
 
-        public IEnumerable<Comment> GetComments()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .Comments
-                        .Where(e => e.SocMediaId == _userId)
-                        .Select(
-                            e =>
-                                new Comment
-                                {
-                                    CommentPost = e.Post
-                                }
-                        );
-                return query.ToArray();
-            }
-        }
+        //public IEnumerable<Comment> GetComments()
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var query =
+        //            ctx
+        //                .Comments
+        //                .Where(e => e.SocMediaId == _userId)
+        //                .Select(
+        //                    e =>
+        //                        new Comment
+        //                        {
+        //                            CommentPost = e.Post
+        //                        }
+        //                );
+        //        return query.ToArray();
+        //    }
+        //}
 
 
     }

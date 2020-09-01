@@ -13,9 +13,9 @@ namespace SocMedia.Data
 {
     public class Comment
     {
-        
-        [ForeignKey("SocMediaUser")]
-        public Guid SocMediaId { get; set; }
+
+        //[Required]
+        //public Guid SocMediaId { get; set; }
 
         [Key]
         public int Id { get; set; }
@@ -26,11 +26,12 @@ namespace SocMedia.Data
         [Required]
         public SocMediaUser Author { get; set; }
 
-        public virtual SocMediaUser SocMediaUser { get; set; }
+        //public virtual SocMediaUser SocMediaUser { get; set; }
 
-        [ForeignKey("Post")]
-        public Post CommentPost { get; set; }
-        public virtual Post Post { get; set; }
+        [Required]
+        public int PostId { get; set; }
+
+        //public virtual Post Post { get; set; }
 
 
     }

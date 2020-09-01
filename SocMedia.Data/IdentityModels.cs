@@ -39,7 +39,7 @@ namespace SocMedia.Data
 
         public DbSet<Like> Likes { get; set; }
         public DbSet<Post> Posts { get; set; }
-        public DbSet<Reply> Replys { get; set; }
+        //public DbSet<Reply> Replys { get; set; }
 
 
 
