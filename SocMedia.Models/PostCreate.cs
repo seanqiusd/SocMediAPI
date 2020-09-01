@@ -9,7 +9,7 @@ namespace SocMedia.Models
 {
     public class PostCreate
     {
-        [Required]
+        //[Required]
 
         public int Id { get; set; }
 

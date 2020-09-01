@@ -14,6 +14,7 @@ using System.Web.Http;
 
 namespace SocMedia.WebAPI.Controllers
 {
+    [Authorize]
     public class PostController : ApiController
     {
         //private readonly ApplicationDbContext _context = new ApplicationDbContext();
@@ -45,7 +46,6 @@ namespace SocMedia.WebAPI.Controllers
         //    return Ok(posts);
         //}
 
-        [Authorize]
         private PostService CreatePostService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
