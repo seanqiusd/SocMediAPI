@@ -87,6 +87,14 @@
     <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Like.cs" />
+<<<<<<< HEAD
+=======
+    <Compile Include="Migrations\202009011904241_CleanStart.cs" />
+    <Compile Include="Migrations\202009011904241_CleanStart.Designer.cs">
+      <DependentUpon>202009011904241_CleanStart.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+>>>>>>> 624f4a431e98c9fa22a05a241f35fb0331192693
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reply.cs" />
@@ -96,5 +104,13 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+<<<<<<< HEAD
+=======
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202009011904241_CleanStart.resx">
+      <DependentUpon>202009011904241_CleanStart.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+>>>>>>> 624f4a431e98c9fa22a05a241f35fb0331192693
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
