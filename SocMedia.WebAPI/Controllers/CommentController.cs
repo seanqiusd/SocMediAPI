@@ -20,12 +20,12 @@ namespace SocMedia.WebAPI.Controllers
             return commentService;
         }
 
-        //public IHttpActionResult Get()
-        //{
-        //    CommentService commentService = CreateCommentService();
-        //    var comments = commentService.GetComments();
-        //    return Ok(comments);
-        //}
+        public IHttpActionResult Get()
+        {
+            CommentService commentService = CreateCommentService();
+            var comments = commentService.GetComments();
+            return Ok(comments);
+        }
 
         public IHttpActionResult Post(CommentCreate comment)
         {
