@@ -20,12 +20,12 @@ namespace SocMedia.WebAPI.Controllers
             return commentService;
         }
 
-        public IHttpActionResult Get()
-        {
-            CommentService commentService = CreateCommentService();
-            var comments = commentService.GetComments();
-            return Ok(comments);
-        }
+        //public IHttpActionResult Get()
+        //{
+        //    CommentService commentService = CreateCommentService();
+        //    var comments = commentService.GetComments();
+        //    return Ok(comments);
+        //}
 
         public IHttpActionResult Post(CommentCreate comment)
         {
@@ -34,11 +34,12 @@ namespace SocMedia.WebAPI.Controllers
                 return BadRequest(ModelState);
             }
             var service = CreateCommentService();
+
             if (!service.CreateComment(comment))
             {
                 return InternalServerError();
             }
-            return Ok();
+            return Ok("Comment added");
         }
     }
 }

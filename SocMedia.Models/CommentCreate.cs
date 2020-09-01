@@ -10,7 +10,9 @@ namespace SocMedia.Models
 {
     public class CommentCreate
     {
-        
+        [Required]
+        public int PostId { get; set; }
+
         [Required]
         [MaxLength(6000)]
         public string CommentText { get; set; }
