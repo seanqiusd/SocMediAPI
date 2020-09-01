@@ -10,6 +10,7 @@ namespace SocMedia.Data
 {
     public class Post
     {
+
         [Key]
         public int Id { get; set; }
         [Required]
