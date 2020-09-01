@@ -1,29 +1,23 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocMedia.Data
+namespace SocMedia.Models
 {
-    public class Post
+    public class PostCreate
     {
+        //[Required]
 
-
-        [Key]
         public int Id { get; set; }
 
         [Required]
+        [MinLength(4, ErrorMessage = "At least 4 characters")]
+        [MaxLength(100, ErrorMessage = "No more than 100 characters")]
         public string Title { get; set; }
-
-        [Required]
+        [MaxLength(8000)]
         public string Text { get; set; }
-
-        [Required]
-        public SocMediaUser Author { get; set; }
-        //public virtual List<Like> Likes { get; set; } = new List<Like>();
-
     }
 }

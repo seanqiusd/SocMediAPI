@@ -1,29 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocMedia.Data
+namespace SocMedia.Models
 {
-    public class Post
+    public class PostDetail
     {
-
-
-        [Key]
+        [Display(Name ="Post ID")]
         public int Id { get; set; }
 
-        [Required]
+        [Display(Name = "Title")]
         public string Title { get; set; }
 
-        [Required]
+        [Display(Name = "Text")]
         public string Text { get; set; }
-
-        [Required]
-        public SocMediaUser Author { get; set; }
-        //public virtual List<Like> Likes { get; set; } = new List<Like>();
 
     }
 }
