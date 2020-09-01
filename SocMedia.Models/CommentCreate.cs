@@ -17,7 +17,7 @@ namespace SocMedia.Models
         [MaxLength(6000)]
         public string CommentText { get; set; }
 
-        //public int CommentId { get; set; }
+        //public int CommentId { get; set; } using this to create new branch don't do anything
 
 
 
