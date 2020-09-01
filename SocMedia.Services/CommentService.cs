@@ -35,24 +35,25 @@ namespace SocMedia.Services
             }
         }
 
-        //public IEnumerable<Comment> GetComments()
-        //{
-        //    using (var ctx = new ApplicationDbContext())
-        //    {
-        //        var query =
-        //            ctx
-        //                .Comments
-        //                .Where(e => e.SocMediaId == _userId)
-        //                .Select(
-        //                    e =>
-        //                        new Comment
-        //                        {
-        //                            CommentPost = e.Post
-        //                        }
-        //                );
-        //        return query.ToArray();
-        //    }
-        //}
+        public IEnumerable<CommentListItem> GetComments()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Comments
+                    .Where(e => e.Author.Id == _userId)
+                    .Select(
+                        e =>
+                        new CommentListItem
+                        {
+                            PostId = e.Id,
+                            Text = e.Text,
+                        }
+                        );
+                return query.ToArray();
+            }
+        }
 
 
     }
