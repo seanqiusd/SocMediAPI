@@ -16,8 +16,8 @@ namespace SocMedia.Data
 
         public string Text { get; set; }
 
-        //[ForeignKey(nameof(User))]
-        //public Guid SocMediaUser { get; set; }
-        //public virtual SocMediaUser User { get; set; }
+        [ForeignKey(nameof(User))]
+        public Guid UserId { get; set; }
+        public virtual SocMediaUser User { get; set; }
     }
 }

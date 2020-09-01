@@ -1,6 +1,8 @@
 ﻿using SocMedia.Data;
+using SocMedia.Services;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Net.Http;
@@ -31,6 +33,14 @@ namespace SocMedia.WebAPI.Controllers
                 return Ok();
             }
             return BadRequest(ModelState);
+        }
+
+        // Get
+        [HttpGet]
+        public async Task<IHttpActionResult> GetAll()
+        {
+            List<Post> posts = await _context.Posts.ToListAsync();
+            return Ok(posts);
         }
     }
 }

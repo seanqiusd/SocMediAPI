@@ -34,5 +34,25 @@ namespace SocMedia.Services
                 return ctx.SaveChanges() == 1;
             }
         }
+
+        public IEnumerable<PostListItem> GetPosts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                    .Posts
+                    .Where(e => e.User.Id == _userId)
+                    .Select(
+                        e =>
+                        new PostListItem
+                        {
+                            PostId = e.Id,
+                            Title = e.Title,
+                        }
+                        );
+                return query.ToArray();
+            }
+        }
     }
 }

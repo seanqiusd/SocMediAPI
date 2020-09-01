@@ -95,6 +95,10 @@
     <Compile Include="Migrations\202009010013446_RemoveLike.Designer.cs">
       <DependentUpon>202009010013446_RemoveLike.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009010053169_GetMigration.cs" />
+    <Compile Include="Migrations\202009010053169_GetMigration.Designer.cs">
+      <DependentUpon>202009010053169_GetMigration.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -111,6 +115,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009010013446_RemoveLike.resx">
       <DependentUpon>202009010013446_RemoveLike.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009010053169_GetMigration.resx">
+      <DependentUpon>202009010053169_GetMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
