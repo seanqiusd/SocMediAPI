@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace SocMedia.Models
 {
-    public class PostCreate
+    public class PostListItem
     {
-        //[Required]
+        [Display(Name ="Post Id")]
+        public int PostId { get; set; }
 
-        public int Id { get; set; }
-
-        [Required]
-        [MinLength(4, ErrorMessage = "At least 4 characters")]
-        [MaxLength(100, ErrorMessage = "No more than 100 characters")]
+        [Display(Name = "Title")]
         public string Title { get; set; }
-        [MaxLength(8000)]
+
+        [Display(Name = "Text")]
         public string Text { get; set; }
     }
 }

@@ -7,13 +7,13 @@ namespace SocMedia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class UpdatingSocMediaUserClass : IMigrationMetadata
+    public sealed partial class Test : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatingSocMediaUserClass));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(Test));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009011213513_UpdatingSocMediaUserClass"; }
+            get { return "202009011456344_Test"; }
         }
         
         string IMigrationMetadata.Source
