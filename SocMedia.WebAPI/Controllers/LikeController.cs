@@ -9,9 +9,6 @@ namespace SocMedia.WebAPI.Controllers
 {
     public class LikeController : ApiController
     {
-        public IHttpActionResult PostLikebyPostId(int id)
-        {
-
-        }
+        //public IHttpActionResult PostLikebyPostId(int id)        
     }
 }

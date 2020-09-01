@@ -20,7 +20,6 @@ namespace SocMedia.Data
 
         [ForeignKey(nameof(SocMediaUser))]
         public Guid UserId { get; set; }
-
         public virtual SocMediaUser SocMediaUser { get; set; }
     }
 }
