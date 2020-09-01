@@ -10,11 +10,11 @@ namespace SocMedia.Services
 {
    public class PostService
     {
-        private readonly Guid _userID;
+        private readonly Guid _userId;
 
         public PostService(Guid userId)
         {
-            _userID = userId;
+            _userId = userId;
         }
 
         public bool CreatePost(PostCreate model)
@@ -22,6 +22,8 @@ namespace SocMedia.Services
             var entity =
                 new Post()
                 {
+                    //SocMediaUser = _userId,
+                    Id = model.Id,
                     Title = model.Title,
                     Text = model.Text,
                 };
