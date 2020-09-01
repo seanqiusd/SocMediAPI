@@ -19,6 +19,7 @@ namespace SocMedia.WebAPI.Controllers
             var LikeService = new LikeService(userId);
             return LikeService;
         }
+
         [HttpPost]
         public IHttpActionResult PostLikebyPostId(LikeCreate like)
         {
@@ -30,7 +31,7 @@ namespace SocMedia.WebAPI.Controllers
             if (!service.CreateLike(like))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Post Liked");
         }
     }
 }
