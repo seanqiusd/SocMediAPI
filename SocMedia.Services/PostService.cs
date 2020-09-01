@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace SocMedia.Services
 {
 
-   public class PostService
+    public class PostService
     {
         private readonly Guid _userId;
 
@@ -43,7 +43,7 @@ namespace SocMedia.Services
                 var query =
                     ctx
                     .Posts
-                    .Where(e => e.User.Id == _userId)
+                    .Where(e => e.Author.Id == _userId)
                     .Select(
                         e =>
                         new PostListItem
@@ -53,6 +53,24 @@ namespace SocMedia.Services
                         }
                         );
                 return query.ToArray();
+            }
+        }
+
+        public PostDetail GetPostById(int id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                    .Posts
+                    .Single(e => e.Id == id && e.Author.Id == _userId);
+                return
+                    new PostDetail
+                    {
+                        Id = entity.Id,
+                        Title = entity.Title,
+                        Text = entity.Text
+                    };
             }
         }
     }
