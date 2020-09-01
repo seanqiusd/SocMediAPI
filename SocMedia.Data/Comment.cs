@@ -11,12 +11,17 @@ namespace SocMedia.Data
 {
     public class Comment
     {
+        
         [ForeignKey("SocMediaUser")]
-        public Guid Id { get; set; }
+        public Guid SocMediaId { get; set; }
+
+        [Key]
+        public int Id { get; set; }
 
         [Required]
         public string Text { get; set; }
 
+        [Required]
         public SocMediaUser Author { get; set; }
 
         public virtual SocMediaUser SocMediaUser { get; set; }
