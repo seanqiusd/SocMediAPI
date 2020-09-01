@@ -87,10 +87,6 @@
     <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Like.cs" />
-    <Compile Include="Migrations\202009011538451_PleaseWork.cs" />
-    <Compile Include="Migrations\202009011538451_PleaseWork.Designer.cs">
-      <DependentUpon>202009011538451_PleaseWork.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\202009011542482_CommentTest.cs" />
     <Compile Include="Migrations\202009011542482_CommentTest.Designer.cs">
       <DependentUpon>202009011542482_CommentTest.cs</DependentUpon>
@@ -110,9 +106,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009011538451_PleaseWork.resx">
-      <DependentUpon>202009011538451_PleaseWork.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009011542482_CommentTest.resx">
       <DependentUpon>202009011542482_CommentTest.cs</DependentUpon>
     </EmbeddedResource>
