@@ -54,11 +54,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PostService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SocMedia.Data\SocMedia.Data.csproj">
+      <Project>{9FBF0BC1-ED48-4C81-AAC9-0B91D074CBF3}</Project>
+      <Name>SocMedia.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\SocMedia.Models\SocMedia.Models.csproj">
+      <Project>{0D8F4F4D-F0F9-4417-A25F-0D92D1D923BA}</Project>
+      <Name>SocMedia.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
