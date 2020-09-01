@@ -35,6 +35,7 @@ namespace SocMedia.Data
         }
 
         public DbSet<SocMediaUser> SocMediaUsers { get; set; }
+        public DbSet<Post> Posts { get; set; }
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
