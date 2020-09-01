@@ -19,8 +19,7 @@ namespace SocMedia.Data
         public virtual Post Post { get; set; }
 
         [ForeignKey(nameof(SocMediaUser))]
-        public int UserId { get; set; }
-
+        public Guid UserId { get; set; }
         public virtual SocMediaUser SocMediaUser { get; set; }
     }
 }
