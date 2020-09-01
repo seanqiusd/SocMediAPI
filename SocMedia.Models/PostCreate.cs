@@ -10,13 +10,13 @@ namespace SocMedia.Models
     public class PostCreate
     {
         [Required]
+
         public int Id { get; set; }
 
         [Required]
         [MinLength(4, ErrorMessage = "At least 4 characters")]
         [MaxLength(100, ErrorMessage = "No more than 100 characters")]
         public string Title { get; set; }
-
         [MaxLength(8000)]
         public string Text { get; set; }
     }

@@ -41,6 +41,7 @@ namespace SocMedia.Data
         public DbSet<Reply> Replys { get; set; }
 
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder
