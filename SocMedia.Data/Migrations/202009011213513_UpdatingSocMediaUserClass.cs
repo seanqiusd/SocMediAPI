@@ -3,7 +3,7 @@ namespace SocMedia.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class RemoveLike : DbMigration
+    public partial class UpdatingSocMediaUserClass : DbMigration
     {
         public override void Up()
         {
@@ -23,16 +23,9 @@ namespace SocMedia.Data.Migrations
                 .Index(t => t.Author_Id)
                 .Index(t => t.CommentPost_Id);
             
-            CreateTable(
-                "dbo.Post",
-                c => new
-                    {
-                        Id = c.Int(nullable: false, identity: true),
-                        Title = c.String(),
-                        Text = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
-            
+            AlterColumn("dbo.SocMediaUser", "FirstName", c => c.String(nullable: false));
+            AlterColumn("dbo.SocMediaUser", "LastName", c => c.String(nullable: false));
+            AlterColumn("dbo.SocMediaUser", "Email", c => c.String(nullable: false));
         }
         
         public override void Down()
@@ -41,7 +34,9 @@ namespace SocMedia.Data.Migrations
             DropForeignKey("dbo.Comment", "Author_Id", "dbo.SocMediaUser");
             DropIndex("dbo.Comment", new[] { "CommentPost_Id" });
             DropIndex("dbo.Comment", new[] { "Author_Id" });
-            DropTable("dbo.Post");
+            AlterColumn("dbo.SocMediaUser", "Email", c => c.String());
+            AlterColumn("dbo.SocMediaUser", "LastName", c => c.String());
+            AlterColumn("dbo.SocMediaUser", "FirstName", c => c.String());
             DropTable("dbo.Comment");
         }
     }

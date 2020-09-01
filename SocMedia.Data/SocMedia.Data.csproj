@@ -87,15 +87,13 @@
     <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Like.cs" />
-
     <Compile Include="Migrations\202008312246503_InitialCreate.cs" />
     <Compile Include="Migrations\202008312246503_InitialCreate.Designer.cs">
       <DependentUpon>202008312246503_InitialCreate.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009010013446_RemoveLike.cs" />
-    <Compile Include="Migrations\202009010013446_RemoveLike.Designer.cs">
-      <DependentUpon>202009010013446_RemoveLike.cs</DependentUpon>
-
+    <Compile Include="Migrations\202009011213513_UpdatingSocMediaUserClass.cs" />
+    <Compile Include="Migrations\202009011213513_UpdatingSocMediaUserClass.Designer.cs">
+      <DependentUpon>202009011213513_UpdatingSocMediaUserClass.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -111,8 +109,8 @@
     <EmbeddedResource Include="Migrations\202008312246503_InitialCreate.resx">
       <DependentUpon>202008312246503_InitialCreate.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009010013446_RemoveLike.resx">
-      <DependentUpon>202009010013446_RemoveLike.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009011213513_UpdatingSocMediaUserClass.resx">
+      <DependentUpon>202009011213513_UpdatingSocMediaUserClass.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -11,26 +11,28 @@ using System.Web.Http;
 namespace SocMedia.WebAPI.Controllers
 {
     [Authorize]
-    public class LikeController : ApiController
+    public class SocialMediaUserController : ApiController
     {
-        private LikeService CreateLikeService()
+        private SocMediaUserService CreateSocMediaUserService()
         {
             var userId = Guid.Parse(User.Identity.GetUserId());
-            var LikeService = new LikeService(userId);
-            return LikeService;
+            var userEmail = User.Identity.GetUserName();
+            var socMediaUserService = new SocMediaUserService(userId, userEmail);
+            return socMediaUserService;
         }
+
         [HttpPost]
-        public IHttpActionResult PostLikebyPostId(LikeCreate like)
+        public IHttpActionResult CreateUser(SocMediaUserCreate user)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreateLikeService();
+            var service = CreateSocMediaUserService();
 
-            if (!service.CreateLike(like))
+            if (!service.CreateUser(user))
                 return InternalServerError();
 
-            return Ok();
+            return Ok("Account Created.");
         }
     }
 }
