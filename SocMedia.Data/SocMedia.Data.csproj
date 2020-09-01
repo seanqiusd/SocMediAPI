@@ -91,6 +91,14 @@
     <Compile Include="Migrations\202009011538451_PleaseWork.Designer.cs">
       <DependentUpon>202009011538451_PleaseWork.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009011542482_CommentTest.cs" />
+    <Compile Include="Migrations\202009011542482_CommentTest.Designer.cs">
+      <DependentUpon>202009011542482_CommentTest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009011549435_PlsWork.cs" />
+    <Compile Include="Migrations\202009011549435_PlsWork.Designer.cs">
+      <DependentUpon>202009011549435_PlsWork.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,6 +112,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202009011538451_PleaseWork.resx">
       <DependentUpon>202009011538451_PleaseWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009011542482_CommentTest.resx">
+      <DependentUpon>202009011542482_CommentTest.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009011549435_PlsWork.resx">
+      <DependentUpon>202009011549435_PlsWork.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
