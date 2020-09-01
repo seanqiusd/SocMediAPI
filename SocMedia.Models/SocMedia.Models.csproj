@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="LikeCreate.cs" />
     <Compile Include="PostCreate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SocMediaUserCreate.cs" />
