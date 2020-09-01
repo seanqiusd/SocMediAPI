@@ -7,13 +7,13 @@ namespace SocMedia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class RemoveLike : IMigrationMetadata
+    public sealed partial class UpdatingSocMediaUserClass : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(RemoveLike));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdatingSocMediaUserClass));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009010013446_RemoveLike"; }
+            get { return "202009011213513_UpdatingSocMediaUserClass"; }
         }
         
         string IMigrationMetadata.Source

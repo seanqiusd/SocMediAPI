@@ -8,28 +8,34 @@ using System.Threading.Tasks;
 
 namespace SocMedia.Services
 {
-    class SocMediaUserService
+    public class SocMediaUserService
     {
         private readonly Guid _userId;
+        private readonly string _email;
 
-        public SocMediaUserService(Guid userId)
+        public SocMediaUserService(Guid userId, string email)
         {
             _userId = userId;
+            _email = email;
         }
 
         public bool CreateUser(SocMediaUserCreate model)
-        {
+        {            
             var entity =
                 new SocMediaUser()
                 {
                     Id = _userId,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    Email = model.Email
+                    Email = _email
                 };
 
             using (var ctx = new ApplicationDbContext())
             {
+                foreach (SocMediaUser s in ctx.SocMediaUsers)
+                    if (s.Id == entity.Id)
+                        return false;
+
                 ctx.SocMediaUsers.Add(entity);
                 return ctx.SaveChanges() == 1;
             }
