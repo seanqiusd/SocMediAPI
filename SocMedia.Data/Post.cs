@@ -11,6 +11,7 @@ namespace SocMedia.Data
     public class Post
     {
 
+
         [Key]
         public int Id { get; set; }
 
@@ -23,5 +24,6 @@ namespace SocMedia.Data
         [Required]
         public SocMediaUser Author { get; set; }
         //public virtual List<Like> Likes { get; set; } = new List<Like>();
+
     }
 }
