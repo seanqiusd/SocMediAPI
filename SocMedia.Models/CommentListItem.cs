@@ -9,7 +9,7 @@ namespace SocMedia.Models
 {
     public class CommentListItem
     {
-        [Display(Name = "Post Id")]
+        [Display(Name = "Comment Id")]
         public int PostId { get; set; }
 
         [Display(Name = "Text")]

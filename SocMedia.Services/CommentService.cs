@@ -47,7 +47,7 @@ namespace SocMedia.Services
                         e =>
                         new CommentListItem
                         {
-                            PostId = e.Id,
+                            PostId = e.PostId,
                             Text = e.Text,
                         }
                         );
