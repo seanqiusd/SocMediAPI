@@ -7,13 +7,13 @@ namespace SocMedia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class InitialCreate : IMigrationMetadata
+    public sealed partial class CleanStart : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitialCreate));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CleanStart));
         
         string IMigrationMetadata.Id
         {
-            get { return "202008312239142_InitialCreate"; }
+            get { return "202009011904241_CleanStart"; }
         }
         
         string IMigrationMetadata.Source

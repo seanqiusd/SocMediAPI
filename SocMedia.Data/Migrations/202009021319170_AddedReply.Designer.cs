@@ -7,13 +7,13 @@ namespace SocMedia.Data.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.0-30225")]
-    public sealed partial class CommentTest : IMigrationMetadata
+    public sealed partial class AddedReply : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CommentTest));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(AddedReply));
         
         string IMigrationMetadata.Id
         {
-            get { return "202009011542482_CommentTest"; }
+            get { return "202009021319170_AddedReply"; }
         }
         
         string IMigrationMetadata.Source

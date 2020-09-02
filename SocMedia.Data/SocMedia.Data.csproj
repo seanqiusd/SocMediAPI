@@ -87,17 +87,13 @@
     <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Like.cs" />
-    <Compile Include="Migrations\202009011456344_Test.cs" />
-    <Compile Include="Migrations\202009011456344_Test.Designer.cs">
-      <DependentUpon>202009011456344_Test.cs</DependentUpon>
+    <Compile Include="Migrations\202009011904241_CleanStart.cs" />
+    <Compile Include="Migrations\202009011904241_CleanStart.Designer.cs">
+      <DependentUpon>202009011904241_CleanStart.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202009011542482_CommentTest.cs" />
-    <Compile Include="Migrations\202009011542482_CommentTest.Designer.cs">
-      <DependentUpon>202009011542482_CommentTest.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202009011549435_PlsWork.cs" />
-    <Compile Include="Migrations\202009011549435_PlsWork.Designer.cs">
-      <DependentUpon>202009011549435_PlsWork.cs</DependentUpon>
+    <Compile Include="Migrations\202009021319170_AddedReply.cs" />
+    <Compile Include="Migrations\202009021319170_AddedReply.Designer.cs">
+      <DependentUpon>202009021319170_AddedReply.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
@@ -110,14 +106,11 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202009011456344_Test.resx">
-      <DependentUpon>202009011456344_Test.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009011904241_CleanStart.resx">
+      <DependentUpon>202009011904241_CleanStart.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009011542482_CommentTest.resx">
-      <DependentUpon>202009011542482_CommentTest.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202009011549435_PlsWork.resx">
-      <DependentUpon>202009011549435_PlsWork.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202009021319170_AddedReply.resx">
+      <DependentUpon>202009021319170_AddedReply.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

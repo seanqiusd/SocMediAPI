@@ -10,7 +10,6 @@ namespace SocMedia.Data.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "SocMedia.Data.ApplicationDbContext";
         }
 
         protected override void Seed(SocMedia.Data.ApplicationDbContext context)

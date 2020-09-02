@@ -1,18 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SocMedia.Data
+namespace SocMedia.Models
 {
-    public class Reply : Comment
+    public class ReplyCreate : CommentCreate
     {
-        [ForeignKey(nameof(Comment))]
+        [Required]
         public int CommentId { get; set; }
-
-        public virtual Comment Comment { get; set; }
     }
 }

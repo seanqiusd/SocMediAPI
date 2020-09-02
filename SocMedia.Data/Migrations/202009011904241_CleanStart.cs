@@ -3,10 +3,62 @@ namespace SocMedia.Data.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class InitialCreate : DbMigration
+    public partial class CleanStart : DbMigration
     {
         public override void Up()
         {
+            CreateTable(
+                "dbo.Comment",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Text = c.String(nullable: false),
+                        PostId = c.Int(nullable: false),
+                        Author_Id = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.SocMediaUser", t => t.Author_Id, cascadeDelete: true)
+                .Index(t => t.Author_Id);
+            
+            CreateTable(
+                "dbo.SocMediaUser",
+                c => new
+                    {
+                        Id = c.Guid(nullable: false),
+                        FirstName = c.String(nullable: false),
+                        LastName = c.String(nullable: false),
+                        Email = c.String(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
+                "dbo.Like",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        PostId = c.Int(nullable: false),
+                        UserId = c.Guid(nullable: false),
+                        SocMediaUser_Id = c.Guid(),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.Post", t => t.PostId, cascadeDelete: true)
+                .ForeignKey("dbo.SocMediaUser", t => t.SocMediaUser_Id)
+                .Index(t => t.PostId)
+                .Index(t => t.SocMediaUser_Id);
+            
+            CreateTable(
+                "dbo.Post",
+                c => new
+                    {
+                        Id = c.Int(nullable: false, identity: true),
+                        Title = c.String(nullable: false),
+                        Text = c.String(nullable: false),
+                        Author_Id = c.Guid(nullable: false),
+                    })
+                .PrimaryKey(t => t.Id)
+                .ForeignKey("dbo.SocMediaUser", t => t.Author_Id, cascadeDelete: true)
+                .Index(t => t.Author_Id);
+            
             CreateTable(
                 "dbo.IdentityRole",
                 c => new
@@ -30,17 +82,6 @@ namespace SocMedia.Data.Migrations
                 .ForeignKey("dbo.ApplicationUser", t => t.ApplicationUser_Id)
                 .Index(t => t.IdentityRole_Id)
                 .Index(t => t.ApplicationUser_Id);
-            
-            CreateTable(
-                "dbo.SocMediaUser",
-                c => new
-                    {
-                        Id = c.Guid(nullable: false),
-                        FirstName = c.String(),
-                        LastName = c.String(),
-                        Email = c.String(),
-                    })
-                .PrimaryKey(t => t.Id);
             
             CreateTable(
                 "dbo.ApplicationUser",
@@ -96,16 +137,27 @@ namespace SocMedia.Data.Migrations
             DropForeignKey("dbo.IdentityUserLogin", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserClaim", "ApplicationUser_Id", "dbo.ApplicationUser");
             DropForeignKey("dbo.IdentityUserRole", "IdentityRole_Id", "dbo.IdentityRole");
+            DropForeignKey("dbo.Like", "SocMediaUser_Id", "dbo.SocMediaUser");
+            DropForeignKey("dbo.Like", "PostId", "dbo.Post");
+            DropForeignKey("dbo.Post", "Author_Id", "dbo.SocMediaUser");
+            DropForeignKey("dbo.Comment", "Author_Id", "dbo.SocMediaUser");
             DropIndex("dbo.IdentityUserLogin", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserClaim", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "ApplicationUser_Id" });
             DropIndex("dbo.IdentityUserRole", new[] { "IdentityRole_Id" });
+            DropIndex("dbo.Post", new[] { "Author_Id" });
+            DropIndex("dbo.Like", new[] { "SocMediaUser_Id" });
+            DropIndex("dbo.Like", new[] { "PostId" });
+            DropIndex("dbo.Comment", new[] { "Author_Id" });
             DropTable("dbo.IdentityUserLogin");
             DropTable("dbo.IdentityUserClaim");
             DropTable("dbo.ApplicationUser");
-            DropTable("dbo.SocMediaUser");
             DropTable("dbo.IdentityUserRole");
             DropTable("dbo.IdentityRole");
+            DropTable("dbo.Post");
+            DropTable("dbo.Like");
+            DropTable("dbo.SocMediaUser");
+            DropTable("dbo.Comment");
         }
     }
 }

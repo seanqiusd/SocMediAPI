@@ -32,7 +32,7 @@ namespace SocMedia.Services
             {
                 entity.Author = ctx.SocMediaUsers.Where(e => e.Id == _userId).First();
                 ctx.Posts.Add(entity);
-                return ctx.SaveChanges() == 1;
+                return ctx.SaveChanges() == 2;
             }
         }
 

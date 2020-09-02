@@ -61,11 +61,19 @@
     <Compile Include="PostDetail.cs" />
     <Compile Include="PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReplyCreate.cs" />
+    <Compile Include="ReplyDetail.cs" />
     <Compile Include="SocMediaUserCreate.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\SocMedia.Data\SocMedia.Data.csproj">
+      <Project>{9FBF0BC1-ED48-4C81-AAC9-0B91D074CBF3}</Project>
+      <Name>SocMedia.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
