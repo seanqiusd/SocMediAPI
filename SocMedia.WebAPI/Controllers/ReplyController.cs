@@ -34,5 +34,13 @@ namespace SocMedia.WebAPI.Controllers
 
             return Ok("Reply added");
         }
+
+        [HttpGet]
+        public IHttpActionResult GetReplyById(int id)
+        {
+            ReplyService replyService = CreateReplyService();
+            var reply = replyService.GetReplyById(id);
+            return Ok(reply);
+        }
     }
 }
