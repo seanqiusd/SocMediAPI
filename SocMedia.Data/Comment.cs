@@ -33,6 +33,6 @@ namespace SocMedia.Data
 
         //public virtual Post Post { get; set; }
 
-
+        public virtual ICollection<Reply> Replies { get; set; } = new List<Reply>();
     }
 }

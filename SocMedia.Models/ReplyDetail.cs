@@ -8,13 +8,8 @@ using System.Threading.Tasks;
 
 namespace SocMedia.Models
 {
-    public class ReplyDetail : CommentListItem
+    public class ReplyDetail
     {
-        public int Id { get; set; }
-
-        [ForeignKey(nameof(Comment))]
-        public int CommentId { get; set; }
-
-        public virtual Comment Comment { get; set; }
+        public string Text { get; set; }
     }
 }

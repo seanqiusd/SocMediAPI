@@ -34,21 +34,21 @@ namespace SocMedia.Services
             }
         }
 
-        public ReplyDetail GetReplyById(int id)
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var entity = ctx.Replys.Single(e => e.Id == id);
+        //public ReplyDetail GetReplyById(int id)
+        //{
+        //    using (var ctx = new ApplicationDbContext())
+        //    {
+        //        var entity = ctx.Replys.Single(e => e.Id == id);
 
-                return new ReplyDetail
-                {
-                    Id = entity.Id,
-                    CommentId = entity.CommentId,
-                    PostId = entity.PostId,
-                    Text = entity.Text,
-                    Comment = entity.Comment
-                };
-            }
-        }
+        //        return new ReplyDetail
+        //        {
+        //            Id = entity.Id,
+        //            CommentId = entity.CommentId,
+        //            PostId = entity.PostId,
+        //            Text = entity.Text,
+        //            Comment = entity.Comment
+        //        };
+        //    }
+        //}
     }
 }

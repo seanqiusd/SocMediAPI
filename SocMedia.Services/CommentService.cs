@@ -12,7 +12,7 @@ namespace SocMedia.Services
     {
         private readonly Guid _userId;
 
-        public CommentService (Guid userId)
+        public CommentService(Guid userId)
         {
             _userId = userId;
         }
@@ -41,17 +41,37 @@ namespace SocMedia.Services
             {
                 var query =
                     ctx
-                    .Comments
-                    .Where(e => e.Author.Id == _userId)
+                    .Comments.ToList()
                     .Select(
                         e =>
-                        new CommentListItem
                         {
-                            PostId = e.PostId,
-                            Text = e.Text,
-                        }
-                        );
-                return query.ToArray();
+                            var listItem = new CommentListItem
+                            {
+                                Id = e.Id,
+                                PostId = e.PostId,
+                                Text = e.Text
+                            };
+                            foreach (var reply in e.Replies)
+                            {
+                                var r = new ReplyDetail  //converting to ReplyDetail so we dont send reply dataclass outside of api
+                                {
+                                    Text = reply.Text
+                                };
+
+                                listItem.Replies.Add(r);
+                            }
+                            return listItem;
+                        }).ToList();
+                return query;
+                //var entities = new List<CommentListItem>();
+                //foreach (Comment c in ctx.Comments)
+                //{
+                //    //var test = c;
+                //    var entity = new CommentListItem { Id = c.Id, PostId = c.PostId, Text = c.Text };
+                //    entity.Replies = new List<Reply>(c.Replies);
+                //    entities.Add(entity);
+                //}
+                //return entities;
             }
         }
 
