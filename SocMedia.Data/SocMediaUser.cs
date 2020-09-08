@@ -29,6 +29,5 @@ namespace SocMedia.Data
         [Required]
         public string Email { get; set; }
 
-
     }
 }
